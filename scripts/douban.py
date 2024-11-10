@@ -91,6 +91,8 @@ def insert_movie():
     results = []
     for i in movie_status.keys():
         results.extend(fetch_subjects(douban_name, "movie", i))
+
+    print(f"results: {results}")
     for result in results:
         movie = {}
         subject = result.get("subject")
