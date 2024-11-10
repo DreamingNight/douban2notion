@@ -92,9 +92,12 @@ def insert_movie():
     for i in movie_status.keys():
         results.extend(fetch_subjects(douban_name, "movie", i))
 
-    print(f"results: {results}")
+    # print(f"results: {results}")
+    
     for result in results:
         movie = {}
+        print(f"result: {result}")
+        
         subject = result.get("subject")
         if(subject.get("title")=="未知电影" or subject.get("title")=="未知电视剧") and subject.get("url") in unknown_dict:
             unknown = unknown_dict.get(subject.get("url"))
